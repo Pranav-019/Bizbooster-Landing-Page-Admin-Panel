@@ -1,0 +1,307 @@
+/* General Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  .mt-24 {
+    margin-top: 6rem;
+  }
+  
+  .flex {
+    display: flex;
+  }
+  
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+  
+  .justify-center {
+    justify-content: center;
+  }
+  
+  .justify-between {
+    justify-content: space-between;
+  }
+  
+  .items-center {
+    align-items: center;
+  }
+  
+  .gap-10 {
+    gap: 2.5rem;
+  }
+  
+  .gap-1 {
+    gap: 0.25rem;
+  }
+  
+  .m-3 {
+    margin: 1rem;
+  }
+  
+  .p-4 {
+    padding: 1rem;
+  }
+  
+  .p-8 {
+    padding: 2rem;
+  }
+  
+  .pt-9 {
+    padding-top: 2.25rem;
+  }
+  
+  .rounded-2xl {
+    border-radius: 1rem;
+  }
+  
+  .bg-white {
+    background-color: #fff;
+  }
+  
+  .dark\:bg-secondary-dark-bg {
+    background-color: #1a202c;
+  }
+  
+  .dark\:text-gray-200 {
+    color: #edf2f7;
+  }
+  
+  .text-gray-400 {
+    color: #cbd5e0;
+  }
+  
+  .text-sm {
+    font-size: 0.875rem;
+  }
+  
+  .text-xl {
+    font-size: 1.25rem;
+  }
+  
+  .text-2xl {
+    font-size: 1.5rem;
+  }
+  
+  .text-lg {
+    font-size: 1.125rem;
+  }
+  
+  .text-3xl {
+    font-size: 1.875rem;
+  }
+  
+  .font-semibold {
+    font-weight: 600;
+  }
+  
+  .font-bold {
+    font-weight: 700;
+  }
+  
+  /* Card Section */
+  .card {
+    background-color: #fff;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .card-header h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  
+  .card-body {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+  }
+  
+  /* Earnings Section */
+  .earnings-card {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 320px;
+  }
+  
+  .earnings-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .earnings-card-header p {
+    font-size: 1.125rem;
+  }
+  
+  .earnings-card-header button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 1.25rem;
+  }
+  
+  .earnings-card-footer {
+    margin-top: 1.5rem;
+  }
+  
+  .earnings-card-footer button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+  }
+  
+  /* Revenue Updates Section */
+  .revenue-update {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .revenue-card {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 380px;
+  }
+  
+  .revenue-card-header {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .revenue-card-body {
+    margin-top: 1.5rem;
+  }
+  
+  .revenue-card-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  
+  .revenue-card-footer button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+  }
+  
+  /* Dropdown */
+  .dropdown {
+    margin-left: 1rem;
+  }
+  
+  .dropdown-list {
+    width: 140px;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+  }
+  
+  /* Transactions Section */
+  .transaction-card {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .transaction-card-header {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .transaction-card-body {
+    margin-top: 1.5rem;
+  }
+  
+  .transaction-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .transaction-card-footer p {
+    font-size: 0.875rem;
+    color: #9b9b9b;
+  }
+  
+  .transaction-card-footer button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-weight: 600;
+  }
+  
+  /* Pie Chart and Line Chart */
+  .chart-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+  }
+  
+  .chart-container .chart {
+    width: 100%;
+    height: 300px;
+    margin-top: 1rem;
+  }
+  
+  /* Weekly Stats */
+  .weekly-stats {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .weekly-stats-header {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .weekly-stats-body {
+    margin-top: 1.5rem;
+  }
+  
+  .weekly-stats-footer {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .weekly-stats-footer button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+  }
+  

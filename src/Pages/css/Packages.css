@@ -1,0 +1,114 @@
+/* Packages.css */
+.package-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.package-container h1 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+}
+
+.package-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group .form-input {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-group .form-input:focus {
+    outline: none;
+    border-color: #007BFF;
+}
+
+.submit-button {
+    background-color: #007BFF;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+.message {
+    color: #e74c3c;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Table Styles */
+.table-container {
+    overflow-x: auto; /* Enables horizontal scrolling for smaller screens */
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse; /* Combines borders for a cleaner look */
+}
+
+th, td {
+    padding: 12px 8px;
+    text-align: center;
+    border: 1px solid #ddd; /* Adds border to cells */
+}
+
+th {
+    background-color: #f8f9fa;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+td {
+    font-size: 14px;
+    color: #555;
+}
+
+.table th, .table td {
+    min-width: 120px; /* Ensures consistent column width */
+}
+
+@media (max-width: 768px) {
+    .table th, .table td {
+        font-size: 12px; /* Adjust font size for smaller screens */
+        padding: 10px 6px;
+    }
+    .form-group label, .submit-button {
+        font-size: 14px; /* Adjust form elements */
+    }
+    .package-container h1 {
+        font-size: 20px;
+    }
+}

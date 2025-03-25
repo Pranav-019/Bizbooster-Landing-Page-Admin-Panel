@@ -1,0 +1,150 @@
+/* Gradient text for heading */
+.text-gradient {
+    background: linear-gradient(90deg, #007bff, #00c4cc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  /* Square and compact cards */
+  .square-card {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
+    background: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+  }
+  
+  .hover-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15) !important;
+  }
+  
+  .card-title {
+    font-size: 0.95rem;
+    color: #333;
+  }
+  
+  .card-body {
+    padding: 1rem !important;
+  }
+  
+  /* Modal Styling */
+  .modal-content {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  }
+  
+  .animate-modal {
+    animation: slideIn 0.3s ease-out;
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .bg-gradient-primary {
+    background: linear-gradient(45deg, #007bff, #00c4cc);
+    border-bottom: none;
+  }
+  
+  .modal-body {
+    background: #f9fafb;
+    border-radius: 0 0 20px 20px;
+  }
+  
+  .form-label {
+    font-size: 0.85rem;
+    margin-bottom: 0.3rem;
+  }
+  
+  .modern-input {
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+  }
+  
+  .modern-input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+    outline: none;
+  }
+  
+  /* Image thumbnails */
+  .img-thumbnail {
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  
+  /* Buttons */
+  .btn {
+    border-radius: 8px;
+    font-size: 0.85rem;
+    padding: 0.4rem 1.2rem;
+    transition: all 0.2s ease;
+  }
+  
+  .btn-primary {
+    background: linear-gradient(45deg, #007bff, #00c4cc);
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    background: linear-gradient(45deg, #0056b3, #009b9f);
+  }
+  
+  .btn-outline-primary, .btn-outline-danger, .btn-outline-success {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.8rem;
+  }
+  
+  .btn-outline-primary:hover {
+    background: #007bff;
+    color: white;
+  }
+  
+  .btn-outline-danger:hover {
+    background: #dc3545;
+    color: white;
+  }
+  
+  .btn-outline-success:hover {
+    background: #28a745;
+    color: white;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .modal-dialog {
+      margin: 1rem;
+      max-width: 95%;
+    }
+  
+    .card-title {
+      font-size: 0.85rem;
+    }
+  
+    .square-card {
+      aspect-ratio: 1 / 1.2;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .modal-dialog {
+      margin: 0.5rem;
+    }
+  
+    .modal-body {
+      padding: 1.5rem;
+    }
+  }

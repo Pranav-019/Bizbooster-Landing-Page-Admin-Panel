@@ -1,0 +1,467 @@
+/* Container styling */
+.crm-container {
+  padding-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 30px;
+  background-color: #f7f7f7; /* Light background for the dashboard */
+}
+
+/* Column styling */
+.crm-column {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading and Subheading styling */
+.heading, .subheading {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 10px;
+}
+
+.subheading {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+/* Table container for responsiveness */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 30px; /* Add space above table */
+}
+
+/* Table styling */
+.table-heading {
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  margin-top: 20px;
+  text-align: left;
+  color: #333;
+}
+
+.leads-table {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto', sans-serif;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Table Header Styling */
+.leads-table th {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding: 12px;
+  font-size: 14px;
+}
+
+/* Table Body Styling */
+.leads-table td {
+  padding: 12px;
+  font-size: 14px;
+  text-align: center;
+  height: 50px;
+  word-wrap: break-word;
+}
+
+/* Table Row Hover Effect */
+.leads-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Form Section styling */
+form {
+  width: 100%;
+  margin-top: 30px;
+}
+
+/* Button styling */
+button {
+  font-family: 'Roboto', sans-serif;
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: none;
+}
+
+.downloadCSV button {
+  width: 100%;
+  margin-top: 20px;
+  background-color: #28a745;
+  color: white;
+}
+
+/* Follow-Up Section styling */
+.follow-up-section {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+}
+
+.follow-up-section h4 {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.follow-up-section textarea {
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 100%;
+  font-size: 14px;
+}
+
+/* CRM Filters Section */
+/* CRM Filters Section */
+/* CRM Filters Section */
+.crm-filters {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.crm-filters button {
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  padding: 8px 15px;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  margin-right: 20px; /* Add space between buttons */
+}
+
+.crm-filters button:hover {
+  background-color: #0056b3;
+}
+
+/* Jitsi Meeting styling */
+.meeting-container iframe {
+  height: 600px;
+  width: 100%;
+  display: block;
+  border: none;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .leads-table th, .leads-table td {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .crm-container {
+    padding: 15px;
+  }
+
+  .leads-table {
+    width: 100%;
+  }
+
+  .crm-column {
+    padding: 15px;
+  }
+
+  .follow-up-section textarea {
+    font-size: 12px;
+  }
+
+  .crm-filters button {
+    font-size: 12px;
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .heading, .subheading {
+    font-size: 1rem;
+  }
+
+  .follow-up-section h4 {
+    font-size: 1rem;
+  }
+}
+
+
+/* Lead Tab Styling */
+.lead-tab {
+  position: fixed;
+  bottom: 1%;
+  right: 5%;
+  width: 90%; /* Changed from fixed 900px */
+  max-width: 900px; /* Added max-width */
+  max-height: 80vh; /* Changed from 650px to be relative to viewport height */
+  overflow-y: auto;
+  padding: 10px;
+  z-index: 999;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  border-radius: 8px;
+  animation: slideIn 0.5s ease-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .lead-tab {
+    width: 95%; /* Take up more width on mobile */
+    right: 2.5%; /* Center it better */
+    bottom: 2%; /* Slightly higher from bottom */
+    left: 2.5%; /* Added left positioning */
+    max-height: 85vh; /* Slightly taller on mobile */
+    padding: 8px; /* Smaller padding */
+  }
+
+  .lead-details-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .detail-item {
+    padding: 0.75rem;
+  }
+
+  .follow-up-section,
+  .meeting-section {
+    padding: 0.75rem;
+  }
+
+  .card-body {
+    padding: 0.75rem !important;
+  }
+
+  /* Make buttons and inputs more touch-friendly */
+  button, 
+  .dropdown-toggle,
+  .form-control {
+    min-height: 44px; /* Better touch target size */
+  }
+
+  /* Adjust text sizes for mobile */
+  h4 {
+    font-size: 1.2rem;
+  }
+
+  h5 {
+    font-size: 1.1rem;
+  }
+
+  /* Make close button more prominent on mobile */
+  .lead-tab .btn-secondary {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Animation for Tab */
+@keyframes slideIn {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Tab Header Styling */
+.lead-tab .card-header {
+  background-color: #007bff;  /* Blue header */
+  color: white;
+  font-weight: bold;
+  font-size: 1.25rem;
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* Tab Footer Styling */
+.lead-tab .card-footer {
+  background-color: #28a745; /* Green footer */
+  color: white;
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* Close Button Styling */
+.lead-tab .btn-secondary {
+  background-color: #dc3545;  /* Red close button */
+  border-color: #dc3545;
+}
+
+.lead-tab .btn-secondary:hover {
+  background-color: #c82333;
+  border-color: #bd2130;
+}
+
+.lead-details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.detail-item {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.detail-item strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #495057;
+}
+
+.detail-item p {
+  margin: 0;
+}
+
+.follow-up-section {
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.follow-up-comments {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.follow-up-comment {
+  background-color: white !important;
+  border: 1px solid #dee2e6;
+}
+
+.meeting-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Dropdown button adjustments */
+.dropdown-button {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.dropdown-menu {
+  width: 100%;
+  min-width: 200px;
+}
+
+/* Card adjustments */
+.lead-tab .card {
+  border: none;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+/* Add these new styles to your existing CSS */
+
+/* Table Responsiveness */
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.lead-table {
+  min-width: 600px; /* Minimum width to prevent squishing */
+}
+
+/* Status and Lead Type Badges */
+.status-badge, .lead-type-badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+/* Status Colors */
+.status-badge.new { background-color: #e3f2fd; color: #1976d2; }
+.status-badge.in-progress { background-color: #fff3e0; color: #f57c00; }
+.status-badge.converted { background-color: #e8f5e9; color: #388e3c; }
+.status-badge.non-converted { background-color: #ffebee; color: #d32f2f; }
+
+/* Lead Type Colors */
+.lead-type-badge.high-priority { background-color: #ffebee; color: #d32f2f; }
+.lead-type-badge.medium-priority { background-color: #fff3e0; color: #f57c00; }
+.lead-type-badge.low-priority { background-color: #e8f5e9; color: #388e3c; }
+
+/* Filter Section */
+.filter-section {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 8px;
+}
+
+.filter-section .btn-group {
+  min-width: fit-content;
+}
+
+/* Responsive Padding */
+@media (max-width: 768px) {
+  .crm-container {
+    padding: 8px !important;
+  }
+
+  .card-body {
+    padding: 12px !important;
+  }
+
+  .table th, .table td {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Make buttons more touch-friendly on mobile */
+@media (max-width: 576px) {
+  .btn {
+    min-height: 44px;
+  }
+
+  .filter-section .btn {
+    width: calc(50% - 4px);
+    margin: 2px;
+  }
+}
+
+/* Header Responsiveness */
+@media (max-width: 768px) {
+  h5 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Table cell max width for better text wrapping */
+.table td {
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
