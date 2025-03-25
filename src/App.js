@@ -223,7 +223,7 @@ const LoginForm = ({ onLogin }) => {
     <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-blue-500 to-indigo-600">
       <div className="bg-white p-8 rounded-lg shadow-lg w-96 max-w-xs">
         <h2 className="text-3xl font-semibold text-center text-gray-700 mb-4">
-          FTFL ADMIN Panel
+          Bizbooster Landing Page ADMIN Panel
         </h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
