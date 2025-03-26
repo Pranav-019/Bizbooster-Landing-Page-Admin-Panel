@@ -2,7 +2,7 @@
 H! This a Admin-Dashboard front end clone that i´ve built using ReactJS.  
 __You can visit the website clicking [here!](https://bizbooster-landing-page-admin-panel.vercel.app/)__
 
-![dashboard]([https://user-images.githubusercontent.com/97960285/173236612-ef63c5d8-173b-4f7d-a345-6d82bac560ec.jpg](https://drive.google.com/file/d/1Qj-hiCo6OHmVapcgFqNW-LHgKonTSVXm/view?usp=drive_link))
+![dashboard]([[https://user-images.githubusercontent.com/97960285/173236612-ef63c5d8-173b-4f7d-a345-6d82bac560ec.jpg](https://drive.google.com/file/d/1Qj-hiCo6OHmVapcgFqNW-LHgKonTSVXm/view?usp=drive_link)](https://ik.imagekit.io/hzyuadmua/adminpanelbizbooster_a5e0ux2u2F.jpeg))
 
   
 
