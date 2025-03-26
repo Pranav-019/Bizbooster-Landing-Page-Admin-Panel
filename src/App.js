@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import { FiSettings } from 'react-icons/fi';
+import { FiSettings, FiUser, FiLock } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 import axios from 'axios';
 
@@ -19,7 +19,6 @@ import {
   Bar,
   Pie,
   Financial,
-  // ColorPicker,
   ColorMapping,
 } from './Pages';
 import './App.css';
@@ -84,7 +83,7 @@ const App = () => {
   };
 
   if (!isAuthenticated) {
-    return <LoginForm onLogin={handleLogin} />;
+    return <LoginForm onLogin={handleLogin} currentMode={currentMode} />;
   }
 
   const roleBasedRoutes = () => {
@@ -130,7 +129,6 @@ const App = () => {
             <Route path="/Quotation" element={<Quotation />} />
             <Route path="/kanban" element={<Kanban />} />
             <Route path="/calendar" element={<Calendar />} />
-            {/* <Route path="/color-picker" element={<ColorPicker />} /> */}
             <Route path="/line" element={<Line />} />
             <Route path="/area" element={<Area />} />
             <Route path="/bar" element={<Bar />} />
@@ -192,14 +190,17 @@ const App = () => {
   );
 };
 
-const LoginForm = ({ onLogin }) => {
+const LoginForm = ({ onLogin, currentMode }) => {
   const [userId, setUserId] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const loginThemeColor = '#3366ff';
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (userId && password) {
+      setIsLoading(true);
       try {
         const response = await axios.post(
           `https://Artisticify-backend.vercel.app/api/users/getUser/${userId}`,
@@ -213,6 +214,8 @@ const LoginForm = ({ onLogin }) => {
         setError(
           err.response?.data?.error || 'An unexpected error occurred'
         );
+      } finally {
+        setIsLoading(false);
       }
     } else {
       setError('Please enter both User ID and Password');
@@ -220,40 +223,124 @@ const LoginForm = ({ onLogin }) => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-blue-500 to-indigo-600">
-      <div className="bg-white p-8 rounded-lg shadow-lg w-96 max-w-xs">
-        <h2 className="text-3xl font-semibold text-center text-gray-700 mb-4">
-          Bizbooster Landing Page ADMIN Panel
-        </h2>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label className="block text-sm font-medium text-gray-600">User ID</label>
-            <input
-              type="text"
-              value={userId}
-              onChange={(e) => setUserId(e.target.value)}
-              className="w-full mt-2 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-              placeholder="Enter your User ID"
-            />
+    <div className={`flex justify-center items-center min-h-screen p-4 ${currentMode === 'Dark' ? 'dark:bg-main-dark-bg' : 'bg-gray-50'}`}>
+      <div className={`w-full max-w-md p-6 sm:p-8 rounded-xl shadow-lg ${currentMode === 'Dark' ? 'dark:bg-secondary-dark-bg' : 'bg-white'}`}>
+        <div className="text-center mb-6 sm:mb-8">
+          <div className="mx-auto w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center mb-3 sm:mb-4" style={{ backgroundColor: `${loginThemeColor}20` }}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke={loginThemeColor}
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="w-8 h-8 sm:w-10 sm:h-10"
+            >
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
           </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-600">Password</label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="w-full mt-2 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-              placeholder="Enter your Password"
-            />
+          <h2 className="text-xl sm:text-2xl font-bold" style={{ color: currentMode === 'Dark' ? 'white' : 'black' }}>
+            Bizbooster Admin
+          </h2>
+          <p className={`mt-1 sm:mt-2 text-xs sm:text-sm ${currentMode === 'Dark' ? 'text-gray-300' : 'text-gray-600'}`}>
+            Sign in to access your dashboard
+          </p>
+        </div>
+
+        {error && (
+          <div className="mb-3 sm:mb-4 p-2 sm:p-3 rounded-md text-xs sm:text-sm text-red-600 bg-red-50 dark:bg-red-900 dark:bg-opacity-20 dark:text-red-300">
+            {error}
           </div>
-          {error && <p className="text-red-500 text-sm text-center">{error}</p>}
-          <button
-            type="submit"
-            className="w-full py-2 mt-4 bg-blue-600 text-white rounded-md shadow-md hover:bg-blue-700 focus:outline-none"
-          >
-            Login
-          </button>
+        )}
+
+        <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
+          <div>
+            <label htmlFor="userId" className={`block text-xs sm:text-sm font-medium mb-1 ${currentMode === 'Dark' ? 'text-gray-300' : 'text-gray-700'}`}>
+              User ID
+            </label>
+            <div className="relative">
+              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <FiUser className={`h-4 w-4 sm:h-5 sm:w-5 ${currentMode === 'Dark' ? 'text-gray-400' : 'text-gray-500'}`} />
+              </div>
+              <input
+                id="userId"
+                type="text"
+                value={userId}
+                onChange={(e) => setUserId(e.target.value)}
+                className={`block w-full pl-9 sm:pl-10 pr-3 py-2 sm:py-3 rounded-lg border ${currentMode === 'Dark' ? 'dark:bg-gray-800 dark:border-gray-700 dark:text-white' : 'bg-white border-gray-300'} focus:outline-none focus:ring-2 focus:ring-offset-2`}
+                style={{ 
+                  borderColor: currentMode === 'Dark' ? '#374151' : '#D1D5DB',
+                  '--tw-ring-color': loginThemeColor
+                }}
+                placeholder="Enter your User ID"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label htmlFor="password" className={`block text-xs sm:text-sm font-medium mb-1 ${currentMode === 'Dark' ? 'text-gray-300' : 'text-gray-700'}`}>
+              Password
+            </label>
+            <div className="relative">
+              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <FiLock className={`h-4 w-4 sm:h-5 sm:w-5 ${currentMode === 'Dark' ? 'text-gray-400' : 'text-gray-500'}`} />
+              </div>
+              <input
+                id="password"
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className={`block w-full pl-9 sm:pl-10 pr-3 py-2 sm:py-3 rounded-lg border ${currentMode === 'Dark' ? 'dark:bg-gray-800 dark:border-gray-700 dark:text-white' : 'bg-white border-gray-300'} focus:outline-none focus:ring-2 focus:ring-offset-2`}
+                style={{ 
+                  borderColor: currentMode === 'Dark' ? '#374151' : '#D1D5DB',
+                  '--tw-ring-color': loginThemeColor
+                }}
+                placeholder="Enter your Password"
+              />
+            </div>
+          </div>
+
+          <div className="flex items-center">
+            <input
+              id="remember-me"
+              name="remember-me"
+              type="checkbox"
+              className={`h-4 w-4 rounded ${currentMode === 'Dark' ? 'dark:bg-gray-800 dark:border-gray-700' : 'border-gray-300'}`}
+              style={{ color: loginThemeColor }}
+            />
+            <label htmlFor="remember-me" className={`ml-2 block text-xs sm:text-sm ${currentMode === 'Dark' ? 'text-gray-300' : 'text-gray-700'}`}>
+              Remember me
+            </label>
+          </div>
+
+          <div>
+            <button
+              type="submit"
+              className="w-full flex justify-center py-2 sm:py-3 px-4 border border-transparent rounded-md shadow-sm text-xs sm:text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 transition-colors duration-200 hover:opacity-90"
+              style={{ backgroundColor: loginThemeColor, '--tw-ring-color': loginThemeColor }}
+              disabled={isLoading}
+            >
+              {isLoading ? (
+                <>
+                  <svg className="animate-spin -ml-1 mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                  Signing in...
+                </>
+              ) : (
+                'Sign in'
+              )}
+            </button>
+          </div>
         </form>
+
+        <div className={`mt-4 sm:mt-6 text-center text-xs sm:text-sm ${currentMode === 'Dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+          © {new Date().getFullYear()} Bizbooster. All rights reserved.
+        </div>
       </div>
     </div>
   );
